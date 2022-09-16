@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_IMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="db_IMSModelStoreContainer">
+    <EntitySet Name="tblInventories" EntityType="db_IMSModel.Store.tblInventories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblItems" EntityType="db_IMSModel.Store.tblItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblLeftPages" EntityType="db_IMSModel.Store.tblLeftPages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblNotifications" EntityType="db_IMSModel.Store.tblNotifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblReports" EntityType="db_IMSModel.Store.tblReports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblRequisitionSlips" EntityType="db_IMSModel.Store.tblRequisitionSlips" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblRightPages" EntityType="db_IMSModel.Store.tblRightPages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblSectors" EntityType="db_IMSModel.Store.tblSectors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblUsers" EntityType="db_IMSModel.Store.tblUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblVouchars" EntityType="db_IMSModel.Store.tblVouchars" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__tblItem__Invento__182C9B23" Association="db_IMSModel.Store.FK__tblItem__Invento__182C9B23">
+      <End Role="tblInventory" EntitySet="tblInventories" />
+      <End Role="tblItem" EntitySet="tblItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblLeftPa__Inven__1DE57479" Association="db_IMSModel.Store.FK__tblLeftPa__Inven__1DE57479">
+      <End Role="tblInventory" EntitySet="tblInventories" />
+      <End Role="tblLeftPage" EntitySet="tblLeftPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblItem__SectorI__173876EA" Association="db_IMSModel.Store.FK__tblItem__SectorI__173876EA">
+      <End Role="tblSector" EntitySet="tblSectors" />
+      <End Role="tblItem" EntitySet="tblItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblRightP__ItemI__2C3393D0" Association="db_IMSModel.Store.FK__tblRightP__ItemI__2C3393D0">
+      <End Role="tblItem" EntitySet="tblItems" />
+      <End Role="tblRightPage" EntitySet="tblRightPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblLeftPa__Secto__1CF15040" Association="db_IMSModel.Store.FK__tblLeftPa__Secto__1CF15040">
+      <End Role="tblSector" EntitySet="tblSectors" />
+      <End Role="tblLeftPage" EntitySet="tblLeftPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblLeftPa__Vouch__1ED998B2" Association="db_IMSModel.Store.FK__tblLeftPa__Vouch__1ED998B2">
+      <End Role="tblVouchar" EntitySet="tblVouchars" />
+      <End Role="tblLeftPage" EntitySet="tblLeftPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblRightP__PageI__2B3F6F97" Association="db_IMSModel.Store.FK__tblRightP__PageI__2B3F6F97">
+      <End Role="tblLeftPage" EntitySet="tblLeftPages" />
+      <End Role="tblRightPage" EntitySet="tblRightPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblNotifi__Recei__22AA2996" Association="db_IMSModel.Store.FK__tblNotifi__Recei__22AA2996">
+      <End Role="tblUser" EntitySet="tblUsers" />
+      <End Role="tblNotification" EntitySet="tblNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblNotifi__Sende__21B6055D" Association="db_IMSModel.Store.FK__tblNotifi__Sende__21B6055D">
+      <End Role="tblUser" EntitySet="tblUsers" />
+      <End Role="tblNotification" EntitySet="tblNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblRequis__Notif__286302EC" Association="db_IMSModel.Store.FK__tblRequis__Notif__286302EC">
+      <End Role="tblNotification" EntitySet="tblNotifications" />
+      <End Role="tblRequisitionSlip" EntitySet="tblRequisitionSlips" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblReport__Secto__30F848ED" Association="db_IMSModel.Store.FK__tblReport__Secto__30F848ED">
+      <End Role="tblSector" EntitySet="tblSectors" />
+      <End Role="tblReport" EntitySet="tblReports" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblRequis__Appli__25869641" Association="db_IMSModel.Store.FK__tblRequis__Appli__25869641">
+      <End Role="tblUser" EntitySet="tblUsers" />
+      <End Role="tblRequisitionSlip" EntitySet="tblRequisitionSlips" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblRequis__Direc__276EDEB3" Association="db_IMSModel.Store.FK__tblRequis__Direc__276EDEB3">
+      <End Role="tblUser" EntitySet="tblUsers" />
+      <End Role="tblRequisitionSlip" EntitySet="tblRequisitionSlips" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblRequis__Recom__267ABA7A" Association="db_IMSModel.Store.FK__tblRequis__Recom__267ABA7A">
+      <End Role="tblUser" EntitySet="tblUsers" />
+      <End Role="tblRequisitionSlip" EntitySet="tblRequisitionSlips" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblRightP__Requi__2E1BDC42" Association="db_IMSModel.Store.FK__tblRightP__Requi__2E1BDC42">
+      <End Role="tblRequisitionSlip" EntitySet="tblRequisitionSlips" />
+      <End Role="tblRightPage" EntitySet="tblRightPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblRightP__UserI__2D27B809" Association="db_IMSModel.Store.FK__tblRightP__UserI__2D27B809">
+      <End Role="tblUser" EntitySet="tblUsers" />
+      <End Role="tblRightPage" EntitySet="tblRightPages" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tblInventories">
+    <Key>
+      <PropertyRef Name="InventoryId" />
+    </Key>
+    <Property Name="InventoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventoryName" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="InventoryDescription" Type="varchar" Nullable="true" MaxLength="1000" />
+    <Property Name="InventoryPicturePath" Type="varchar" Nullable="true" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tblItems">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemDescription" Type="varchar" Nullable="true" MaxLength="1000" />
+    <Property Name="IsPicked" Type="int" Nullable="true" />
+    <Property Name="SectorId" Type="int" Nullable="true" />
+    <Property Name="InventoryId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tblLeftPages">
+    <Key>
+      <PropertyRef Name="PageId" />
+    </Key>
+    <Property Name="PageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReceiveingInfo" Type="varchar" Nullable="true" MaxLength="1000" />
+    <Property Name="ReceivingSerial" Type="int" Nullable="true" />
+    <Property Name="ReceivingDate" Type="datetime" Nullable="true" />
+    <Property Name="PreviousBalance" Type="int" Nullable="true" />
+    <Property Name="NoOfReceivingArticles" Type="int" Nullable="true" />
+    <Property Name="TotalBalance" Type="int" Nullable="true" />
+    <Property Name="SectorId" Type="int" Nullable="true" />
+    <Property Name="InventoryId" Type="int" Nullable="true" />
+    <Property Name="VoucharId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tblNotifications">
+    <Key>
+      <PropertyRef Name="NotificationId" />
+    </Key>
+    <Property Name="NotificationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SenderId" Type="int" Nullable="true" />
+    <Property Name="ReceiverId" Type="int" Nullable="true" />
+    <Property Name="NotificationDate" Type="datetime" Nullable="true" />
+    <Property Name="NotificationBody" Type="varchar" Nullable="true" MaxLength="1000" />
+    <Property Name="IsSeen" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tblReports">
+    <Key>
+      <PropertyRef Name="ReportId" />
+    </Key>
+    <Property Name="ReportId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SectorId" Type="int" Nullable="true" />
+    <Property Name="ReportTitle" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="ReportDate" Type="datetime" Nullable="true" />
+    <Property Name="ReportFilePath" Type="varchar" Nullable="true" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tblRequisitionSlips">
+    <Key>
+      <PropertyRef Name="RequisitionSlipId" />
+    </Key>
+    <Property Name="RequisitionSlipId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequisitionDate" Type="datetime" Nullable="true" />
+    <Property Name="IssuingPurpose" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="AllInventoryNameWithAmount" Type="varchar" Nullable="true" MaxLength="1000" />
+    <Property Name="ApplicantId" Type="int" Nullable="true" />
+    <Property Name="RecommenderId" Type="int" Nullable="true" />
+    <Property Name="DirectorId" Type="int" Nullable="true" />
+    <Property Name="RecommenderResponse" Type="varchar" Nullable="true" MaxLength="20" />
+    <Property Name="DirectorResponse" Type="varchar" Nullable="true" MaxLength="20" />
+    <Property Name="ApplicationStatus" Type="varchar" Nullable="true" MaxLength="20" />
+    <Property Name="ItemsId" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="NotificationId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tblRightPages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TakingDate" Type="datetime" Nullable="true" />
+    <Property Name="WhereLocated" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="PageId" Type="int" Nullable="true" />
+    <Property Name="ItemId" Type="int" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="RequisitionSerialNumber" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tblSectors">
+    <Key>
+      <PropertyRef Name="SectorId" />
+    </Key>
+    <Property Name="SectorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SectorName" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="SectorDescription" Type="varchar" Nullable="true" MaxLength="1000" />
+    <Property Name="CreatingDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tblUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" Nullable="true" MaxLength="30" />
+    <Property Name="FirstName" Type="varchar" Nullable="true" MaxLength="20" />
+    <Property Name="LastName" Type="varchar" Nullable="true" MaxLength="20" />
+    <Property Name="Password" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="JobPosition" Type="varchar" Nullable="true" MaxLength="25" />
+    <Property Name="SystemPosition" Type="int" Nullable="true" />
+    <Property Name="Sex" Type="varchar" Nullable="true" MaxLength="6" />
+    <Property Name="PhotoPath" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="Email" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="ContactNo" Type="varchar" Nullable="true" MaxLength="16" />
+    <Property Name="SignaturePath" Type="varchar" Nullable="true" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tblVouchars">
+    <Key>
+      <PropertyRef Name="VoucharId" />
+    </Key>
+    <Property Name="VoucharId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VoucharFilePath" Type="varchar" Nullable="true" MaxLength="500" />
+  </EntityType>
+  <Association Name="FK__tblItem__Invento__182C9B23">
+    <End Role="tblInventory" Type="db_IMSModel.Store.tblInventories" Multiplicity="0..1" />
+    <End Role="tblItem" Type="db_IMSModel.Store.tblItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblInventory">
+        <PropertyRef Name="InventoryId" />
+      </Principal>
+      <Dependent Role="tblItem">
+        <PropertyRef Name="InventoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblLeftPa__Inven__1DE57479">
+    <End Role="tblInventory" Type="db_IMSModel.Store.tblInventories" Multiplicity="0..1" />
+    <End Role="tblLeftPage" Type="db_IMSModel.Store.tblLeftPages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblInventory">
+        <PropertyRef Name="InventoryId" />
+      </Principal>
+      <Dependent Role="tblLeftPage">
+        <PropertyRef Name="InventoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblItem__SectorI__173876EA">
+    <End Role="tblSector" Type="db_IMSModel.Store.tblSectors" Multiplicity="0..1" />
+    <End Role="tblItem" Type="db_IMSModel.Store.tblItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSector">
+        <PropertyRef Name="SectorId" />
+      </Principal>
+      <Dependent Role="tblItem">
+        <PropertyRef Name="SectorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblRightP__ItemI__2C3393D0">
+    <End Role="tblItem" Type="db_IMSModel.Store.tblItems" Multiplicity="0..1" />
+    <End Role="tblRightPage" Type="db_IMSModel.Store.tblRightPages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblItem">
+        <PropertyRef Name="ItemId" />
+      </Principal>
+      <Dependent Role="tblRightPage">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblLeftPa__Secto__1CF15040">
+    <End Role="tblSector" Type="db_IMSModel.Store.tblSectors" Multiplicity="0..1" />
+    <End Role="tblLeftPage" Type="db_IMSModel.Store.tblLeftPages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSector">
+        <PropertyRef Name="SectorId" />
+      </Principal>
+      <Dependent Role="tblLeftPage">
+        <PropertyRef Name="SectorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblLeftPa__Vouch__1ED998B2">
+    <End Role="tblVouchar" Type="db_IMSModel.Store.tblVouchars" Multiplicity="0..1" />
+    <End Role="tblLeftPage" Type="db_IMSModel.Store.tblLeftPages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblVouchar">
+        <PropertyRef Name="VoucharId" />
+      </Principal>
+      <Dependent Role="tblLeftPage">
+        <PropertyRef Name="VoucharId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblRightP__PageI__2B3F6F97">
+    <End Role="tblLeftPage" Type="db_IMSModel.Store.tblLeftPages" Multiplicity="0..1" />
+    <End Role="tblRightPage" Type="db_IMSModel.Store.tblRightPages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLeftPage">
+        <PropertyRef Name="PageId" />
+      </Principal>
+      <Dependent Role="tblRightPage">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblNotifi__Recei__22AA2996">
+    <End Role="tblUser" Type="db_IMSModel.Store.tblUsers" Multiplicity="0..1" />
+    <End Role="tblNotification" Type="db_IMSModel.Store.tblNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUser">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblNotification">
+        <PropertyRef Name="ReceiverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblNotifi__Sende__21B6055D">
+    <End Role="tblUser" Type="db_IMSModel.Store.tblUsers" Multiplicity="0..1" />
+    <End Role="tblNotification" Type="db_IMSModel.Store.tblNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUser">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblNotification">
+        <PropertyRef Name="SenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblRequis__Notif__286302EC">
+    <End Role="tblNotification" Type="db_IMSModel.Store.tblNotifications" Multiplicity="0..1" />
+    <End Role="tblRequisitionSlip" Type="db_IMSModel.Store.tblRequisitionSlips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNotification">
+        <PropertyRef Name="NotificationId" />
+      </Principal>
+      <Dependent Role="tblRequisitionSlip">
+        <PropertyRef Name="NotificationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblReport__Secto__30F848ED">
+    <End Role="tblSector" Type="db_IMSModel.Store.tblSectors" Multiplicity="0..1" />
+    <End Role="tblReport" Type="db_IMSModel.Store.tblReports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSector">
+        <PropertyRef Name="SectorId" />
+      </Principal>
+      <Dependent Role="tblReport">
+        <PropertyRef Name="SectorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblRequis__Appli__25869641">
+    <End Role="tblUser" Type="db_IMSModel.Store.tblUsers" Multiplicity="0..1" />
+    <End Role="tblRequisitionSlip" Type="db_IMSModel.Store.tblRequisitionSlips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUser">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblRequisitionSlip">
+        <PropertyRef Name="ApplicantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblRequis__Direc__276EDEB3">
+    <End Role="tblUser" Type="db_IMSModel.Store.tblUsers" Multiplicity="0..1" />
+    <End Role="tblRequisitionSlip" Type="db_IMSModel.Store.tblRequisitionSlips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUser">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblRequisitionSlip">
+        <PropertyRef Name="DirectorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblRequis__Recom__267ABA7A">
+    <End Role="tblUser" Type="db_IMSModel.Store.tblUsers" Multiplicity="0..1" />
+    <End Role="tblRequisitionSlip" Type="db_IMSModel.Store.tblRequisitionSlips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUser">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblRequisitionSlip">
+        <PropertyRef Name="RecommenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblRightP__Requi__2E1BDC42">
+    <End Role="tblRequisitionSlip" Type="db_IMSModel.Store.tblRequisitionSlips" Multiplicity="0..1" />
+    <End Role="tblRightPage" Type="db_IMSModel.Store.tblRightPages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblRequisitionSlip">
+        <PropertyRef Name="RequisitionSlipId" />
+      </Principal>
+      <Dependent Role="tblRightPage">
+        <PropertyRef Name="RequisitionSerialNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblRightP__UserI__2D27B809">
+    <End Role="tblUser" Type="db_IMSModel.Store.tblUsers" Multiplicity="0..1" />
+    <End Role="tblRightPage" Type="db_IMSModel.Store.tblRightPages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUser">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblRightPage">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
